@@ -1,0 +1,29 @@
+<div class="loginbox">
+    <div class="spacing">
+        <div class="lable">Name</div>
+        <input placeholder="Enter name" type="text"  [(ngModel)]="data.name" required pattern="[A-Za-z]{2,}"/> <!-- An <input> elemrnt with type="text" that can contain minimum two letters or greater than two (no numbers or special characters):-->
+    </div>
+    <div class="spacing">
+        <div class="lable">Email</div>
+        <input placeholder="Enter email" type="email" [(ngModel)]="data.email" required /> <!-- An <input> element with type="email" that must be in order like:- characters@characters.domain (characters followed by an @ sign, followed by more characters, and then a "." After the "." sign, add at least 2 letters from a to z :-->
+    </div>
+    <div class="spacing">
+        <div class="lable">Contact</div>
+        <input placeholder="Enter contact" type="tel" [(ngModel)]="data.contact" size="10" required pattern="[0-9]{10}" /> <!-- An <input> element with type="tel" that must contain 10 digits (0-9) as per pattern:-->
+    </div>
+    <div class="spacing">
+        <div class="lable">Password</div>
+        <input placeholder="Enter password" type="password" [(ngModel)]="data.password" required pattern=".{8,}" /> <!-- An <input> element with type="password" that must contain 8 or more characters:-->
+    </div>
+    <div class="spacing">
+        <div class="lable">Confirm password</div>
+        <input placeholder="Confirm password" type="password" [(ngModel)]="data.confirmPassword" required pattern=".{8,}" /> <!-- An <input> element with type="password" that must contain 8 or more characters:-->
+    </div>
+    <div class="spacing">
+        <button (click)="registerUser()">Submit</button>
+        <div class="err" *ngIf="isError">{{errMsg}}</div>
+    </div>
+    <div class="extra">
+        <span>Already a member ? <a routerLink="">Login.</a></span>
+    </div>
+</div>
